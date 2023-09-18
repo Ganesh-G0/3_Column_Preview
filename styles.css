@@ -96,7 +96,7 @@ button:hover {
 }
 #attribution { 
     color: black;
-    font-size: 11px; 
+    font-size: 1.4rem; 
     margin: 2rem;
     text-align: center; 
 }
@@ -122,6 +122,9 @@ button:hover {
     }
     #third {
         border-radius: 0 .8rem .8rem 0;
+    }
+    #attribution {
+        font-size: 2rem;
     }
 }
 
