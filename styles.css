@@ -22,20 +22,38 @@ body {
     color: var(--Very-light-gray-bg-heading-btn);
 }
 main {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     align-items: center;
     justify-content: center;
     margin: 4rem auto;
+    grid-template-areas: 
+    "first"
+    "second"
+    "third"
+    ;
+}
+#first { 
+    grid-area: first; 
+    border-radius: 1rem 1rem 0 0;
+    background-color: var(--Bright-orange);
+}
+#second { 
+    grid-area: second; 
+    background-color: var(--Dark-cyan);
+}
+#third { 
+    grid-area: third; 
+    border-radius: 0 0 1rem 1rem ;
+    background-color: var(--Very-dark-cyan);
 }
 section {
-    width: 25rem;
-    height: 45rem;
+    max-width: 60ch;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: start;
     justify-content: space-around;
-    padding: 4rem;
+    padding: 2.5rem;
+    gap: 2rem;
 }
 img {
     width: 8rem;
@@ -47,41 +65,21 @@ h1 {
     font-family: 'Big Shoulders Display', cursive;
 }
 p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     line-height: 2.4rem;
     color: var(--Transparent-white-p);
     font-family: 'Lexend Deca', sans-serif;
 }
-#first {
-    border-radius: 1rem 1rem 0 0;
-    background-color: var(--Bright-orange);
-}
-#second {
-    background-color: var(--Dark-cyan);
-}
-#third {
-    background-color: var(--Very-dark-cyan);
-    border-radius: 0 0 1rem 1rem ;
-}
 button {
-    width: 14rem;
-    padding: 1rem 2rem;
+    padding: 1rem 3rem;
     border-radius: 4rem;
     background-color: white;
     border: 2px solid white;
 }
-button:hover {
-    cursor: pointer;
-}
-#btn1 {
-    color: var(--Bright-orange);   
-}
-#btn2 {
-    color: var(--Dark-cyan);   
-}
-#btn3 {
-    color: var(--Very-dark-cyan);   
-}
+button:hover { cursor: pointer; }
+#btn1 { color: var(--Bright-orange); }
+#btn2 { color: var(--Dark-cyan); }
+#btn3 { color: var(--Very-dark-cyan); }
 #btn1:hover {
     color: white;
     background-color: var(--Bright-orange);
@@ -94,28 +92,19 @@ button:hover {
     color: white;
     background-color: var(--Very-dark-cyan);
 }
-#attribution { 
-    color: black;
-    font-size: 1.4rem; 
-    margin: 2rem;
-    text-align: center; 
-}
-#attribution > a { 
-    color: hsl(228, 45%, 44%); 
-}
 @media  (min-width: 768px) {
     body {
-        height: 100vh;
+        height: 100dvh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
     }
     main {
-        flex-direction: row;
+        grid-template-areas: "first second third" ;
     }
     section {
         width: 25rem;
+        height: 45rem;
     }
     #first {
         border-radius: .8rem 0 0 .8rem;
@@ -123,8 +112,8 @@ button:hover {
     #third {
         border-radius: 0 .8rem .8rem 0;
     }
-    #attribution {
-        font-size: 2rem;
+    p {
+        font-size: 1.4rem;
     }
 }
 
